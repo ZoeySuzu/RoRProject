@@ -1,0 +1,19 @@
+<h1> Article list </h1>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+  <% @articles.each do |article| %>
+  <tr>
+    <td><%= article.id %></td>
+    <td><%= article.created_at %></td>
+    <td><%= article.title %></td>
+    <td><%= truncate(article.text, length: 60)  %></td>
+    <td><%= link_to 'View',article_path(article)%></td>
+  </tr>
+  <%end%>
+</table>
+<p><%= link_to 'Home',welcome_index_path %></p>
