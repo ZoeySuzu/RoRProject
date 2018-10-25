@@ -2,14 +2,14 @@
 <p> <%= @article.created_at %> </p>
 <p><%= @article.text %></p>
 
+<p>
+  <%= link_to 'Back',articles_path %> |
+  <%= link_to 'Home',welcome_index_path %> |
+  <%= link_to 'Edit',edit_article_path%> | 
+  <%= link_to 'Delete',@article,method: :Delete, data: {confirm: 'Are you sure?'}%>
+</p>
+
 <hr>
 <%= render 'comments/comment'%>
 <hr>
 <%= render 'comments/form' %>
-
-<p>
-  <%= link_to 'Back',articles_path %> |
-  <%= link_to 'Home',welcome_index_path %> |
-  <%= link_to 'Edit',edit_article_path%> |
-  <%= link_to 'Delete',@article,method: :Delete, data: {confirm: 'Are you sure?'}%>
-</p>
