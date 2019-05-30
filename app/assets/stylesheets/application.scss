@@ -15,11 +15,11 @@
 
 @import "bootstrap";
 
-
+/*
 *{
   border: 2px red dashed;
 }
-
+*/
 
 body{
   background-color: #3A3A3A;
@@ -35,14 +35,12 @@ body{
 .table tr,
 .table tr td,
 .table tr th{
-  border:black 2px solid;
+  border-top:black 2px solid;
+  border-bottom: black 2px solid;
 }
 
 .table{
   background-color: #F5F5F5;
-  a{
-    color: blue;
-  }
 }
 
 th{
