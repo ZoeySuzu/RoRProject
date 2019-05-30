@@ -1,16 +1,23 @@
 <!-- Form partial for comments -->
+<section class="row">
+    <div class = "col">
 <h3>Leave a comment:</h3>
 <%= form_for([@article, @article.comments.build]) do |f| %>
 
+
   <p>
     <%= f.label :commenter %> <br>
-    <%= f.text_field :commenter %>
+    <%= f.text_field :commenter  %>
   </p>
+  <div class = "field", style="width:100%">
   </p>
-    <%= f.label :body %> <br>
-    <%= f.text_area :body %>
+    <%= f.label :body  %> <br>
+    <%= f.text_area :body, class:'form-control' %>
   </p>
+  </div>
   <p>
-    <%= f.submit %>
+    <%= f.submit class:'btn btn-md btn-success' %>
   </p>
 <% end %>
+</div>
+</section>

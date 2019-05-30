@@ -1,15 +1,15 @@
+<section class="row">
+  <div class = "col">
 <h2><%= @article.title %></h2>
 <p> <%= @article.created_at %> </p>
 <p><%= @article.text %></p>
-
-<p>
-  <%= link_to 'Back',articles_path, class:'btn btn-md btn-info' %> |
-  <%= link_to 'Home',welcome_index_path, class:'btn btn-md btn-info' %> |
-  <%= link_to 'Edit',edit_article_path, class:'btn btn-md btn-warning'%> |
-  <%= link_to 'Delete',@article,method: :Delete, data: {confirm: 'Are you sure?'} class:'btn btn-md btn-danger'%>
-</p>
-
-<hr>
+  <p>
+    <%= link_to 'Back',articles_path, class:'btn btn-md btn-info' %> |
+    <%= link_to 'Home',welcome_index_path, class:'btn btn-md btn-info' %> |
+    <%= link_to 'Edit',edit_article_path, class:'btn btn-md btn-warning'%> |
+    <%= link_to 'Delete',@article,method: :Delete, data: {confirm: 'Are you sure?'}, class:'btn btn-md btn-danger'%>
+  </p>
+  </div>
+</section>
 <%= render 'comments/comment'%>
-<hr>
 <%= render 'comments/form' %>

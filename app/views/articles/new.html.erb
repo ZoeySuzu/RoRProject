@@ -25,11 +25,8 @@
 </div>
 
 <p>
-  <%= f.submit %>
-</p>
+  <%= f.submit class:'btn btn-md btn-success' %> |
+  <%= link_to 'Back',articles_path, class:'btn btn-md btn-info' %> |
+  <%= link_to 'Home',welcome_index_path, class:'btn btn-md btn-info' %>
+  </p>
 <% end %>
-
-<p>
-  <%= link_to 'Back',articles_path %> |
-  <%= link_to 'Home',welcome_index_path %>
-</p>

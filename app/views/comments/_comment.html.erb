@@ -1,10 +1,19 @@
 <!--Partial Display Article Comments -->
-<h2>Comments</h2>
+<section class="row">
+  <div class = "col">
+<h2>Comments:</h2>
 <% @article.comments.each do |comment| %>
-  <p> <%= comment.created_at %> </p>
-  <p><strong>Commenter:</strong></p>
-  <%= comment.commenter %>
-  <p><strong>Comment:</strong></p>
-  <%= comment.body%>
-  <p><%= link_to 'Delete',[comment.article, comment],method: :Delete, data: {confirm: 'Are you sure?'}%></p>
+
+<comment-box>
+<div class="row">
+  <div class="col-md-7"><strong><%= comment.commenter %></strong></div>
+  <div class="col-md-5"><%= comment.created_at %></div>
+</div>
+<div class="row">
+  <div class="col-md-11"><p><%= comment.body%></p></div>
+  <div class="col-md-1"<p><%= link_to 'X',[comment.article, comment],method: :Delete, data: {confirm: 'Are you sure?'}, class:'btn btn-md btn-danger'%></p></div>
+</div>
+</comment-box>
 <% end %>
+</div>
+</section>

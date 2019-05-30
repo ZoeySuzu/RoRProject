@@ -1,3 +1,22 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+comment-box {
+  float: left;
+  width: 100%;
+  background-color: #caf8ff;
+  border: 2px solid;
+  margin-bottom: 4px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.row {
+  margin:0px;
+}
+
+@include media-breakpoint-up(md) {
+  .col-md-5 {
+        text-align: right;
+  }
+}
