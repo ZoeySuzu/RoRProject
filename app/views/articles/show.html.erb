@@ -1,7 +1,7 @@
 <section class="row">
   <div class = "col">
 <h2><%= @article.title %></h2>
-<p> <%= @article.created_at %> </p>
+<p> <%= @article.created_at.strftime('Created on: %Y/%m/%d at %H:%M%p') %> </p>
 <p><%= @article.text %></p>
   <p>
     <%= link_to 'Back',articles_path, class:'btn btn-md btn-info' %> |
