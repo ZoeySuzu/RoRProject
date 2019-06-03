@@ -1,28 +1,29 @@
 <div class = "col">
-  <div class = "row">
-    <div class = "col">
-      <h1> Article list </h1>
-      <p>
-        <%= link_to 'Home',welcome_index_path, class: 'btn btn-lg btn-info' %>
-        <%= link_to 'Create new article',new_article_path, class: 'btn btn-lg btn-success'%>
-      </p>
-    </div>
+  <div class = "row my-2">
+  <div class="col text-center">
+     <h1> Article list <%= link_to '',new_article_path, class: 'fas fa-plus-circle fas-btn'%></h1>
+     </div>
   </div>
 
 <div class="row">
     <article-list class="col">
-      <% @articles.each do |article| %>
+      <% @articles.reverse_order.each do |article| %>
           <listed-article class="row">
-            <button class="col-lg-11 col-md-10 col-12", onclick="goToURL('<%= article_path(article)%>')">
+            <div class="col-lg-10 col-md-9 col-12">
               <header class="row">
                 <h3><%= link_to article.title,article_path(article)%></h3>
               </header>
-              <div class="row"><%= truncate(article.text, length: 200)  %></div>
-            </button>
-            <datebox class = "col-lg-1 col-md-2 col-12">
-              <%= article.created_at.strftime('%Y/%m/%d') %>
-              <%= link_to '',  edit_article_path(article),  class:'fas fa-pen fa-2x'%>
-              <%= link_to '',article_path(article),method: :Delete, data: {confirm: 'Are you sure?'}, class:"fas fa-trash-alt fa-2x" %>
+              <p class="row"><%= truncate(article.text, length: 200)  %></p>
+              <div class="row"><%= link_to 'View',article_path(article), class:"btn btn-md btn-info" %></div>
+            </div>
+            <datebox class = "col-lg-2 col-md-3 col-12">
+              <h4><%= article.created_at.strftime('%Y/%m/%d')%></h4>
+              <h3>
+                <%= link_to '',  edit_article_path(article),  class:'fas fas-btn fa-pen'%>
+                <%= link_to '',article_path(article),method: :Delete, data: {confirm: 'Are you sure?'}, class:"fas fas-btn fa-trash-alt" %> 
+                <i class="fas fa-comment "></i>  <%= article.comments.count%>
+              </h3>
+
             </datebox>
 
           </listed-article>

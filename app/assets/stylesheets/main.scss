@@ -5,6 +5,7 @@
 @import "navigation.scss";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "articles.scss";
 
 /*
 *{
@@ -16,7 +17,7 @@ html, body{
     height:calc(100%);
 }
 body{
-  background-color: #8b9ea3;
+  background-image: url("background.jpeg");
   min-height: 75rem;
   padding-top: 2.5rem;
 }
@@ -28,11 +29,15 @@ list-header{
     }
 }
 
+h1, h2, h3, h4, p{
+  color: #F5F5F5;
+}
+
 .container{
-  background-color: #78777F;
+  //background-color: rgba($color: grey, $alpha: 0.15);
   padding: 15px;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  border-left: 2px solid rgb(63, 63, 63);
+  border-right: 2px solid rgb(63, 63, 63);
   height:100%;
 }
 
@@ -42,20 +47,28 @@ article-list.col{
 }
 
 listed-article:hover{
-  background-color: #D5D5D5;
-}
-button:hover{
-  background-color: #D5D5D5;
+  background-color: rgb(240, 240, 240);
 }
 
 listed-article{
-  a{
-    color: #666666;
+  header{
+    border-bottom: solid black 1px;
   }
 
-  border-radius: 5px;
+  border-radius: 8px;
+  border-top-left-radius: 20px;
+
+  h1,h2,h3,h4,p,a{
+    color: #0c0c0c;
+  }
+
+  p{
+    font-size: 18px;
+    text-align: justify;
+  }
+
   border:3px black solid;
-  background-color: #F5F5F5;
+  background-image: radial-gradient(circle, #F5F5F5, rgb(216, 216, 216) );
   padding:4px;
   vertical-align: middle;
   .btn{
@@ -82,28 +95,26 @@ section{
   padding-bottom: 5px;
 }
 
-section~section{
-  border-top: 2px solid;
-}
-
-.btn-light{
-
-}
-
-.fas{
+.fas.fas-btn{
   padding: 4px;
-  color: rgb(203, 133, 221) !important;
+  color: rgb(231, 147, 224) !important;
 }
 
-.fas:hover{
+.fas-btn:hover{
   color: rgb(185, 32, 32) !important;
   text-decoration: none;
+}
+
+.fas, .fab{
+  color: rgb(144, 231, 243) !important;
 }
 
 button{
   border: 0px;
   text-align: left;
-  background-color: #F5F5F5;
+  background-color: transparent;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 datebox{
@@ -117,4 +128,12 @@ datebox.col-lg-1, datebox.col-md-2, datebox.col-12{
   padding: 0px;
   padding-right: 10px;
   margin-left: -10px;
+}
+
+button:active{
+  border: 0px;
+}
+
+.jumbotron{
+  background-color: white;
 }

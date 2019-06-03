@@ -2,8 +2,10 @@
 <section class="row">
   <div class = "col">
 <h2>Comments:</h2>
+<% if( @article.comments.count == 0) %>
+<div>There are no comments for this article.</div> 
+<% end %>
 <% @article.comments.each do |comment| %>
-
 <comment-box>
 <div class="row">
   <div class="col-md-7"><strong><%= comment.commenter %></strong></div>
@@ -11,9 +13,11 @@
 </div>
 <div class="row">
   <div class="col-md-11"><p><%= comment.body%></p></div>
-  <div class="col-md-1"<p><%= link_to 'X',[comment.article, comment],method: :Delete, data: {confirm: 'Are you sure?'}, class:'btn btn-md btn-danger'%></p></div>
+  <div class="col-md-1 text-right"<p><%= link_to '',[comment.article, comment],method: :Delete, data: {confirm: 'Are you sure?'}, class:"fas fas-btn fa-trash-alt fa-2x"%></p></div>
 </div>
 </comment-box>
 <% end %>
 </div>
 </section>
+
+<%= render 'comments/form' %>

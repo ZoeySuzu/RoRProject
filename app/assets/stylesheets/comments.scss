@@ -4,11 +4,15 @@
 comment-box {
   float: left;
   width: 100%;
-  background-color: #caf8ff;
+  background-color: aliceblue;
   border: 2px solid;
   margin-bottom: 4px;
   padding: 8px;
   border-radius: 8px;
+  
+  h1,h2,h3,h4,p,a{
+    color: #0c0c0c;
+  }
 }
 
 .row {
