@@ -22,3 +22,15 @@
 .form-control{
     border: 3px solid #0a0064;
   }
+
+  .navbar{
+    .fas{
+        padding: 4px;
+        color: #D5D5D5 !important;
+    }
+    
+    .fas:hover{
+        color: yellow !important;
+        text-decoration: none;
+    }
+}

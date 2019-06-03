@@ -12,21 +12,20 @@
 <div class="row">
     <article-list class="col">
       <% @articles.each do |article| %>
+          <listed-article class="row">
+            <button class="col-lg-11 col-md-10 col-12", onclick="goToURL('<%= article_path(article)%>')">
+              <header class="row">
+                <h3><%= link_to article.title,article_path(article)%></h3>
+              </header>
+              <div class="row"><%= truncate(article.text, length: 200)  %></div>
+            </button>
+            <datebox class = "col-lg-1 col-md-2 col-12">
+              <%= article.created_at.strftime('%Y/%m/%d') %>
+              <%= link_to '',  edit_article_path(article),  class:'fas fa-pen fa-2x'%>
+              <%= link_to '',article_path(article),method: :Delete, data: {confirm: 'Are you sure?'}, class:"fas fa-trash-alt fa-2x" %>
+            </datebox>
 
-      <listed-article class="row">
-        <div class="col">
-          <header class="row">
-            <article-title class="col-md-10"><h3><%= link_to article.title,article_path(article)%></h3></article-title>
-            <article-date class="col-2"> <%= article.created_at.strftime('%Y/%m/%d') %></article-date>
-          </header>
-          <div class="row"><%= truncate(article.text, length: 60)  %></div>
-          <article-buttons class="row">
-            <div ><%= link_to 'View',article_path(article), class: 'btn btn-sm btn-info' %></div>
-            <div ><%= link_to 'Edit',edit_article_path(article), class: 'btn btn-sm btn-warning' %></div>
-            <div ><%= link_to 'Delete',article_path(article),method: :Delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-danger' %></div>
-          </article-buttons>
-        </div>
-      </listed-article>
+          </listed-article>
       <%end%>
     </article-list>
     </div>

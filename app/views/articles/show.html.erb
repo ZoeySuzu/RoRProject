@@ -6,8 +6,8 @@
   <p>
     <%= link_to 'Back',articles_path, class:'btn btn-md btn-info' %> |
     <%= link_to 'Home',welcome_index_path, class:'btn btn-md btn-info' %> |
-    <%= link_to 'Edit',edit_article_path, class:'btn btn-md btn-warning'%> |
-    <%= link_to 'Delete',@article,method: :Delete, data: {confirm: 'Are you sure?'}, class:'btn btn-md btn-danger'%>
+    <%= link_to '', edit_article_path,  class:'fas fa-pen fa-2x'%> |
+    <%= link_to '',@article,method: :Delete, data: {confirm: 'Are you sure?'}, class:"fas fa-trash-alt fa-2x"%>
   </p>
   </div>
 </section>

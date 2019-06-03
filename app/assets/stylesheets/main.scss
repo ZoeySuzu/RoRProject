@@ -3,6 +3,8 @@
 @import "comments.scss";
 @import "welcome.scss";
 @import "navigation.scss";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 /*
 *{
@@ -42,6 +44,9 @@ article-list.col{
 listed-article:hover{
   background-color: #D5D5D5;
 }
+button:hover{
+  background-color: #D5D5D5;
+}
 
 listed-article{
   a{
@@ -61,7 +66,7 @@ listed-article{
     padding-right: 2px;
   }
   header{
-    vertical-align: middle;
+    vertical-align: top;
   }
   article-date{
     text-align: right;
@@ -69,14 +74,6 @@ listed-article{
   ~listed-article.row{
     border-top: 2px solid;
     margin-top: 6px;
-  }
-  article-buttons {
-    padding: 3px;
-    float: left;
-    .btn{
-      float: left;
-      width: 64px;
-    }
   }
 }
 
@@ -91,4 +88,33 @@ section~section{
 
 .btn-light{
 
+}
+
+.fas{
+  padding: 4px;
+  color: rgb(203, 133, 221) !important;
+}
+
+.fas:hover{
+  color: rgb(185, 32, 32) !important;
+  text-decoration: none;
+}
+
+button{
+  border: 0px;
+  text-align: left;
+  background-color: #F5F5F5;
+}
+
+datebox{
+  max-width: 16em;
+  text-align: right;
+
+
+}
+
+datebox.col-lg-1, datebox.col-md-2, datebox.col-12{
+  padding: 0px;
+  padding-right: 10px;
+  margin-left: -10px;
 }

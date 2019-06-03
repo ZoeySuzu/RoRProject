@@ -16,3 +16,11 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+function goToURL(linkstr) {
+    location.href = linkstr;
+  }
+
+  function nProp(e){
+    event.stopPropagation();  
+  }
